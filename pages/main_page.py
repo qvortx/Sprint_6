@@ -18,27 +18,27 @@ class MainPage(BasePage):
 
     @allure.step("Кликаем на вопрос #{index}")
     def click_question(self, index):
-        locator = MainPageLocators.question_locator(index)
+        locator = (MainPageLocators.QUESTION_HEADING[0], MainPageLocators.QUESTION_HEADING[1].format(index))
         self.click_element(locator)
 
     @allure.step("Получаем текст ответа #{index}")
     def get_answer_text(self, index):
-        locator = MainPageLocators.answer_locator(index)
+        locator = (MainPageLocators.ANSWER_PANEL[0], MainPageLocators.ANSWER_PANEL[1].format(index))
         return self.get_text(locator)
 
-    @allure.step("Кликнуть по верхней кнопке <Заказать> в шапке")
+    @allure.step("Кликнуть по верхней кнопке «Заказать» в шапке")
     def click_top_order_button(self):
         self.click_element(MainPageLocators.TOP_ORDER_BUTTON)
 
-    @allure.step("Кликнуть по нижней кнопке <Заказать>")
+    @allure.step("Кликнуть по нижней кнопке «Заказать»")
     def click_bottom_order_button(self):
         self.scroll_to_element(MainPageLocators.BOTTOM_ORDER_BUTTON)
         self.click_element(MainPageLocators.BOTTOM_ORDER_BUTTON)
 
-    @allure.step("Кликнуть по логотипу <Самокат>")
+    @allure.step("Кликнуть по логотипу «Самокат»")
     def click_scooter_logo(self):
         self.click_element(MainPageLocators.SCOOTER_LOGO)
 
-    @allure.step("Кликнуть по логотипу <Яндекс>")
+    @allure.step("Кликнуть по логотипу «Яндекс»")
     def click_yandex_logo(self):
         self.click_element(MainPageLocators.YANDEX_LOGO)

@@ -12,10 +12,5 @@ class MainPageLocators:
 
     QUESTIONS_HEADER = (By.XPATH, "//div[contains(text(), 'Вопросы о важном')]")
 
-    @staticmethod
-    def question_locator(index):
-        return (By.ID, f"accordion__heading-{index}")
-
-    @staticmethod
-    def answer_locator(index):
-        return (By.ID, f"accordion__panel-{index}")
+    QUESTION_HEADING = (By.ID, "accordion__heading-{}")
+    ANSWER_PANEL = (By.ID, "accordion__panel-{}")
